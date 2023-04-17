@@ -6,7 +6,8 @@ services:
     image: redmine
     ports:
       - "8080:3000"
-    networks: redmine-network
+    networks:
+      - redmine-network
   
   db:
     container_name: some-postgres
@@ -20,7 +21,8 @@ services:
       - pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
-    networks: redmine-network
+    networks:
+      - redmine-network
 
 volumes:
   pgdata:
